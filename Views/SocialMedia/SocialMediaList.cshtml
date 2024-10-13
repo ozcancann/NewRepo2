@@ -1,0 +1,35 @@
+﻿﻿@model List<PortfolioProject.Models.SocialMedia>
+
+@{
+    ViewBag.Title = "SocialMediaList";
+    Layout = "~/Views/Admin/Index.cshtml";
+
+}
+
+<div class="alert alert-info h4">Sosyal Medya Hesaplarım</div>
+
+<table class="table table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Başlık</th>
+        <th>Url</th>
+        <th>Simge</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.SocialMediaId</td>
+            <td>@item.Title</td>
+            <td>@item.Url</td>
+            <td>@item.Icon</td>
+            <td><a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaId" class="btn btn-outline-warning">Sil</a></td>
+            <td><a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaId" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/SocialMedia/CreateSocialMedia" class="btn btn-outline-info">Yeni Sosyal Medya Hesabı Ekleme</a>

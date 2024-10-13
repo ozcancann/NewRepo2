@@ -1,0 +1,32 @@
+﻿﻿@model PortfolioProject.Models.Education
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<div class="alert alert-info h4">Eğitim Bilgi Güncelleme Sayfası</div>
+
+<form method="post">
+    @Html.HiddenFor(s => s.EducationId)
+    <label>Başlık</label>
+    @Html.TextBoxFor(s => s.Title, new { @class = "form-control" })
+    <br />
+    <label>Alt Başlık</label>
+    @Html.TextBoxFor(s => s.SubTitle, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(s => s.Description, new { @class = "form-control" })
+    <br />
+    <label>Tarih Bilgisi</label>
+    @Html.TextBoxFor(s => s.Date, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Eğitim Bilgisini Güncelle</button>
+    <br />
+    <br />
+    <button onclick="goBack()" class="btn btn-outline-warning">Mesaj Sayfasına Geri Dön</button>
+
+    <script>
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+</form>

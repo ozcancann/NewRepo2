@@ -1,0 +1,24 @@
+﻿﻿@{
+    ViewBag.Title = "CreateEducation";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<div class="alert alert-info h4">Yeni Eğitim Bilgi Ekleme Sayfası</div>
+
+<form method="post">
+
+    <label>Kurum Adı</label>
+    <input type="text" class="form-control" name="Title" />
+    <br />
+    <label>Bölüm Bilgisi</label>
+    <input type="text" class="form-control" name="SubTitle" />
+    <br />
+    <label>Mezuniyet Tarihi</label>
+    <input type="text" class="form-control" name="DateRange" />
+    <br />
+    <label>Açıklama</label>
+    <textarea rows="4" class="form-control" name="Description"></textarea>
+    <br />
+    <button class="btn btn-outline-info">Eğitim Bilgisini Kaydet</button>
+   
+
+</form>

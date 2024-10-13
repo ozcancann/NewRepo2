@@ -1,0 +1,50 @@
+﻿﻿@model  PortfolioProject.Models.Contact
+
+@{
+    ViewBag.Title = "MessageDetails";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="alert alert-info h4">Mesaj Güncelleme Sayfası</div>
+
+<form method="post">
+
+    <div>
+        <label>ID</label>
+        @Html.TextBoxFor(x => x.ContactId, new { @class = "form-control" })
+        <br />
+
+        <label>Ad Soyad</label>
+        @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+        <br />
+
+        <label>E Mail</label>
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        <br />
+
+        <label>Konu</label>
+        @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+        <br />
+
+        <label>Tarih</label>
+        @Html.TextBoxFor(x => x.SendDate, new { @class = "form-control" })
+        <br />
+
+        <label>Mesaj</label>
+        @Html.TextAreaFor(x => x.Message, new { @class = "form-control" })
+
+        <br />
+
+        <button class="btn btn-outline-success">Gelen Mesajı Güncelle</button>
+        <br />
+        <br />
+        <button onclick="goBack()" class="btn btn-outline-warning">Mesaj Sayfasına Geri Dön</button>
+
+        <script>
+    function goBack() {
+        window.history.back();
+    }
+        </script>
+
+    </div>
+</form>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6a1ff7b199af4c3fb243d56008ba3e06" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="MyPortfolioModel.About" Width="1.5" PointX="1" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Admin" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Blog" Width="1.5" PointX="10.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Category" Width="1.5" PointX="1" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Contact" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Education" Width="1.5" PointX="5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Experience" Width="1.5" PointX="7" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Expertise" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Feature" Width="1.5" PointX="8.875" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Internship" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Portfolio" Width="1.5" PointX="4.875" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Profile" Width="1.5" PointX="5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Service" Width="1.5" PointX="8.875" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Skill" Width="1.5" PointX="8.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.SocialMedia" Width="1.5" PointX="7" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.sysdiagrams" Width="1.5" PointX="1" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioModel.Testimonial" Width="1.5" PointX="7" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="MyPortfolioModel.FK_Contact_Category" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

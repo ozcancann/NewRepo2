@@ -1,0 +1,22 @@
+﻿﻿@model PortfolioProject.Models.Experience
+
+@{
+    ViewBag.Title = "CreateExperience";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="alert alert-info h4">Yeni Deneyim Ekleme Sayfası</div>
+
+<form method="post">
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Alt Başlığı</label>
+    @Html.TextBoxFor(x => x.SubTitle, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Deneyim Ekle</button>
+
+</form>

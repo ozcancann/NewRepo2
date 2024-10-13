@@ -1,0 +1,29 @@
+﻿﻿@model PortfolioProject.Models.Experience
+@{
+    ViewBag.Title = "UpdateExperience";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<div class="alert alert-info h4">Deneyim Güncelleme Sayfası</div>
+
+<form method="post">
+    @Html.HiddenFor(x => x.ExperienceId)
+    <label>Deneyim Başlığı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Deneyim Alt Başlığı</label>
+    @Html.TextBoxFor(x => x.SubTitle, new { @class = "form-control" })
+    <br />
+    <label>Deneyim Açıklaması</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Deneyim Güncelle</button>
+    <br />
+    <br />
+    <button onclick="goBack()" class="btn btn-outline-warning">Mesaj Sayfasına Geri Dön</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</form>

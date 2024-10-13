@@ -1,0 +1,29 @@
+﻿﻿@model PortfolioProject.Models.Portfolio
+@{
+    ViewBag.Title = "UpdatePortfolio";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<div class="alert alert-info h4">Portfolyo Bilgileri Güncelleme Sayfası</div>
+
+
+<form method="post">
+    @Html.HiddenFor(s => s.PortfolioId)
+    <label>Başlık</label>
+    @Html.TextBoxFor(s => s.SubTitle, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(s => s.Title, new { @class = "form-control" })
+    <br />
+    <label>Proje Fotoğrafları</label>
+    @Html.TextAreaFor(s => s.ImageUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Portfolyo Bilgisini Güncelle</button>
+    <br /><br />
+    <button onclick="/Profil/Index/" class="btn btn-outline-warning">Hizmet Bilgileri Sayfasına Geri Dön</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</form>

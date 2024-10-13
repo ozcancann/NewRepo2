@@ -1,0 +1,17 @@
+﻿﻿﻿@model PortfolioProject.Models.Category
+
+@{
+    ViewBag.Title = "CreateCategory";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="alert alert-info h4">Yeni Kategori Ekleme Sayfası</div>
+
+<form method="post">
+    <label>Kategori Adı</label>
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-info">Kategoriyi Ekle</button>
+
+
+</form>

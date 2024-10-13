@@ -1,0 +1,41 @@
+﻿﻿@model PortfolioProject.Models.Service
+
+@{
+    ViewBag.Title = "UpdateService";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="alert alert-info h4">Himzet Bilgileri Güncelleme Sayfası</div>
+
+<form method="post">
+
+
+    <label style="display:none">Eğitim ID</label>
+
+    @Html.TextBoxFor(x => x.ServiceId, new { @class = "form-control", @style = "display:none" })
+    <br />
+
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label>Simge</label>
+    @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-outline-success">Hizmet Güncelle</button>
+    <br />
+    <br />
+    <button onclick="/Profil/Index/" class="btn btn-outline-warning">Hizmet Bilgileri Sayfasına Geri Dön</button>
+
+    <script>
+     function goBack() {
+         window.history.back();
+     }
+    </script>
+
+</form>

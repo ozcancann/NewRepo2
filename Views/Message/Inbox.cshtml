@@ -1,0 +1,96 @@
+﻿@using PagedList
+@using PagedList.Mvc
+﻿@model PagedList.IPagedList<PortfolioProject.Models.Contact>
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "~/Views/Admin/Index.cshtml";
+
+    string bodyColor = "#000000";
+}
+
+<div class="alert alert-info h4">Mesaj Listesi</div>
+
+<table class="table table-hover">
+    <tr>
+        <th>Mesaj Numarası</th>
+        <th>Gönderen</th>
+        <th>Tarih</th>
+        <th>Konu</th>
+        <th>Durum</th>
+        <th>Mesajı Sil</th>
+        <th>Mesajın Detayı</th>
+        <th>Mesajı Güncelle</th>
+    </tr>
+    <tr>
+
+        @foreach (var item in Model)
+        {
+
+            switch (@item.Category.CategoryName)
+            {
+
+                case "Teşekkür":
+                    bodyColor = "#339933";
+                    break;
+
+                case "Öneri":
+                    bodyColor = "#CCFF66";
+                    break;
+
+                case "Proje Talebi":
+                    bodyColor = "#6495ED";
+                    break;
+
+                case "Referans":
+                    bodyColor = "#B22422";
+                    break;
+
+                case "Toplantı":
+                    bodyColor = "#8FBC8F";
+                    break;
+
+                case "Görüşme":
+                    bodyColor = "#F0F8FF";
+                    break;
+
+                case "Reklam":
+                    bodyColor = "#ADD8E6";
+                    break;
+
+                case "Diğer":
+                    bodyColor = "#A9A9A9";
+                    break;
+
+                default:
+                    bodyColor = "#000000";
+                    break;
+            }
+
+        <tr>
+            <th>@item.ContactId</th>
+            <td>@item.NameSurname</td>
+            <td>@item.SendDate</td>
+            <td><span class="@bodyColor" style="background-color:@bodyColor; font-size: small">@item.Subject</span></td>
+            @*<td style="background-color:@bodyColor">@item.Subject</td>*@
+            @if (item.IsRead == false)
+            {
+                <td><a href="/Message/ChangeMessageStatusToTrue/@item.ContactId" class="btn btn-outline-info">Okundu Olarak Seç</a></td>
+            }
+            else
+            {
+                <td><a href="/Message/ChangeMessageStatusToFalse/@item.ContactId" class="btn btn-outline-dark">Okunmadı Olarak Seç</a></td>
+            }
+
+            <td><a href="/Message/MessageDetails/@item.ContactId" class="btn btn-outline-danger">Mesajı Sil</a></td>
+            <td><a href="/Message/MessageDetails/@item.ContactId" class="btn btn-outline-success">Mesajı Aç</a></td>
+            <td><a href="/Message/UpdateMessage/@item.ContactId" class="btn btn-outline-warning">Mesajı Güncelle</a></td>
+        </tr>
+    }
+
+    </table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Inbox", new { sayfa }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    {"page-link"}
+})
+

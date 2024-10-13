@@ -1,0 +1,34 @@
+﻿﻿@model PortfolioProject.Models.SocialMedia
+@{
+    ViewBag.Title = "SocialMediaList";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+<div class="alert alert-info h4">Sosyal Medya Bilgisi Güncelleme Sayfası</div>
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.SocialMediaId)
+
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Bağlantı Adresi</label>
+    @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+    <br />
+    <label>Simge</label>
+    @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Sosyal Medya Bilgisini Güncelle</button>
+    <br />
+    <br />
+    <button onclick="goBack()" class="btn btn-outline-warning">Sosyal Medya Sayfasına Geri Dön</button>
+
+    <script>
+function goBack() {
+    window.history.back();
+}
+    </script>
+
+</form>

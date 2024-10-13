@@ -1,0 +1,36 @@
+﻿﻿@model PortfolioProject.Models.Testimonial
+@{
+    ViewBag.Title = "UpdateTestimonial";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="alert alert-info h4">Referans Bilgisi Güncelleme Sayfası</div>
+
+
+<form method="post">
+
+    @Html.HiddenFor(a => a.TestimonialId)
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(a => a.NameSurname, new { @class = "form-control" })
+    <br />
+    <label>Adres</label>
+    @Html.TextBoxFor(a => a.Address, new { @class = "form-control" })
+    <br />
+    <label>Yorum</label>
+    @Html.TextBoxFor(a => a.Description, new { @class = "form-control" })
+    <br />
+    <label>Fotoğraf Url</label>
+    @Html.TextAreaFor(a => a.ImageUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Referans Güncelle</button>
+    <br />
+    <br />
+    <button onclick="goBack()" class="btn btn-outline-warning">Referans Sayfasına Geri Dön</button>
+
+    <script>
+function goBack() {
+    window.history.back();
+}
+    </script>
+
+</form>

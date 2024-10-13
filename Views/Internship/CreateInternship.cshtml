@@ -1,0 +1,27 @@
+﻿﻿@model PortfolioProject.Models.Internship
+@{
+    ViewBag.Title = "CreateInternship";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="alert alert-info h4">Yeni Staj Bilgisi Ekleme Sayfası</div>
+
+<form method="post">
+
+    <label>Firma Adı</label>
+    @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+    <br />
+    <label>Başlangıç Tarihi</label>
+    @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control" })
+    <br />
+    <label>Bitiş Tarihi</label>
+    @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control" })
+    <br />
+    <label>Pozisyon</label>
+    @Html.TextBoxFor(x => x.Position, new { @class = "form-control" })
+    <br />
+    <label>Deneyim Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Staj Bilgisini Ekle</button>
+</form>
